@@ -1,0 +1,26 @@
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: spark-master-controller
+spec:
+  replicas: 1
+  selector:
+    component: spark-master
+  template:
+    metadata:
+      labels:
+        component: spark-master
+    spec:
+      hostname: spark-master-hostname
+      subdomain: spark-master-headless
+      containers:
+        - name: spark-master
+          image: mydockerrepo/spark:2.4.4
+          imagePullPolicy: Always
+          command: ["/start-master"]
+          ports:
+            - containerPort: 7077
+            - containerPort: 8080
+          resources:
+            requests:
+              cpu: 100m
