@@ -23,13 +23,13 @@ ENV HADOOP_HOME=/opt/hadoop
 ENV PATH=$PATH:$HADOOP_HOME/bin
 ENV LD_LIBRARY_PATH=$HADOOP_HOME/lib/native
 
-RUN curl http://central.maven.org/maven2/org/apache/hadoop/hadoop-aws/2.8.2/hadoop-aws-2.8.2.jar -o /opt/spark/jars/hadoop-aws-2.8.2.jar
-RUN curl http://central.maven.org/maven2/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar -o /opt/spark/jars/httpclient-4.5.3.jar
-RUN curl http://central.maven.org/maven2/joda-time/joda-time/2.9.9/joda-time-2.9.9.jar -o /opt/spark/jars/joda-time-2.9.9.jar
-RUN curl http://central.maven.org/maven2/com/amazonaws/aws-java-sdk-core/1.11.712/aws-java-sdk-core-1.11.712.jar -o /opt/spark/jars/aws-java-sdk-core-1.11.712.jar
-RUN curl http://central.maven.org/maven2/com/amazonaws/aws-java-sdk/1.11.712/aws-java-sdk-1.11.712.jar -o /opt/spark/jars/aws-java-sdk-1.11.712.jar
-RUN curl http://central.maven.org/maven2/com/amazonaws/aws-java-sdk-kms/1.11.712/aws-java-sdk-kms-1.11.712.jar -o /opt/spark/jars/aws-java-sdk-kms-1.11.712.jar
-RUN curl http://central.maven.org/maven2/com/amazonaws/aws-java-sdk-s3/1.11.712/aws-java-sdk-s3-1.11.712.jar -o /opt/spark/jars/aws-java-sdk-s3-1.11.712.jar
+RUN curl https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/2.8.2/hadoop-aws-2.8.2.jar -o /opt/spark/jars/hadoop-aws-2.8.2.jar
+RUN curl https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar -o /opt/spark/jars/httpclient-4.5.3.jar
+RUN curl https://repo1.maven.org/maven2/joda-time/joda-time/2.9.9/joda-time-2.9.9.jar -o /opt/spark/jars/joda-time-2.9.9.jar
+RUN curl https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-core/1.11.712/aws-java-sdk-core-1.11.712.jar -o /opt/spark/jars/aws-java-sdk-core-1.11.712.jar
+RUN curl https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk/1.11.712/aws-java-sdk-1.11.712.jar -o /opt/spark/jars/aws-java-sdk-1.11.712.jar
+RUN curl https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-kms/1.11.712/aws-java-sdk-kms-1.11.712.jar -o /opt/spark/jars/aws-java-sdk-kms-1.11.712.jar
+RUN curl https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-s3/1.11.712/aws-java-sdk-s3-1.11.712.jar -o /opt/spark/jars/aws-java-sdk-s3-1.11.712.jar
 
 ADD start-common.sh start-worker start-master /
 ADD core-site.xml /opt/spark/conf/core-site.xml
